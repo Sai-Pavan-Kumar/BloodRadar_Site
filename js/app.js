@@ -73,63 +73,121 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   Blood Compatibility Matrix & Calculator
+   Blood Compatibility Matrix & Dual-Mode Calculator (Whole Blood vs SDP)
    ========================================================================== */
 const COMPATIBILITY_DATA = {
-  'A+': {
-    canDonateTo: ['A+', 'AB+'],
-    canReceiveFrom: ['A+', 'A-', 'O+', 'O-'],
-    note: 'As an A+ donor, you can help anyone with A+ and AB+ blood. You can receive blood from A+, A-, O+, and O-.'
+  'WHOLE_BLOOD': {
+    'A+': {
+      canDonateTo: ['A+', 'AB+'],
+      canReceiveFrom: ['A+', 'A-', 'O+', 'O-'],
+      note: 'As an A+ whole blood donor, your red blood cells can help A+ and AB+ patients. You can safely receive blood from A+, A-, O+, and O-.'
+    },
+    'A-': {
+      canDonateTo: ['A+', 'A-', 'AB+', 'AB-'],
+      canReceiveFrom: ['A-', 'O-'],
+      note: 'A- whole blood is in critical need for Rh-negative recipients. You can donate red cells to all A and AB groups, and receive from A- and O-.'
+    },
+    'B+': {
+      canDonateTo: ['B+', 'AB+'],
+      canReceiveFrom: ['B+', 'B-', 'O+', 'O-'],
+      note: 'As a B+ donor, you can give red cells to B+ and AB+ recipients. You can receive from B+, B-, O+, and O- (covers 35% of Indian hospital needs).'
+    },
+    'B-': {
+      canDonateTo: ['B+', 'B-', 'AB+', 'AB-'],
+      canReceiveFrom: ['B-', 'O-'],
+      note: 'B- is a scarce blood type in Indian blood banks. You can donate red cells to all B and AB groups, and receive from B- and O-.'
+    },
+    'O+': {
+      canDonateTo: ['O+', 'A+', 'B+', 'AB+'],
+      canReceiveFrom: ['O+', 'O-'],
+      note: 'O+ is India\'s primary clinical reserve (37% of population). Can give red blood cells to any Rh-positive patient in an emergency.'
+    },
+    'O-': {
+      canDonateTo: ['All Groups (Universal RBC Donor)'],
+      canReceiveFrom: ['O-'],
+      note: 'Universal Red Blood Cell Donor. Your red cells can be transfused to any patient in acute hemorrhage prior to laboratory cross-matching.'
+    },
+    'AB+': {
+      canDonateTo: ['AB+'],
+      canReceiveFrom: ['All Groups (Universal RBC Recipient)'],
+      note: 'Universal Red Blood Cell Recipient. In an emergency, you can safely receive red blood cells from any blood type.'
+    },
+    'AB-': {
+      canDonateTo: ['AB+', 'AB-'],
+      canReceiveFrom: ['AB-', 'A-', 'B-', 'O-'],
+      note: 'One of the rarest ABO blood groups in India (<0.5%). Can donate red cells to AB- and AB+, and receive from any Rh-negative group.'
+    },
+    'Bombay (hh)': {
+      canDonateTo: ['All ABO Blood Groups'],
+      canReceiveFrom: ['Bombay (hh) Only'],
+      note: 'Extremely rare phenotype (1 in 10,000 in Mumbai). Can donate red cells to all ABO groups, but can ONLY safely receive from another Bombay donor.'
+    },
+    'Rh-null': {
+      canDonateTo: ['All Rh Variant Patients'],
+      canReceiveFrom: ['Rh-null Only'],
+      note: 'The "Golden Blood" (<50 cases known globally). Lacks all 61 Rh antigens. Universal donor for rare Rh variants, but can only receive Rh-null blood.'
+    }
   },
-  'A-': {
-    canDonateTo: ['A+', 'A-', 'AB+', 'AB-'],
-    canReceiveFrom: ['A-', 'O-'],
-    note: 'As an A- donor, you can give blood to all A and AB blood types. You can safely receive blood from A- and O-.'
-  },
-  'B+': {
-    canDonateTo: ['B+', 'AB+'],
-    canReceiveFrom: ['B+', 'B-', 'O+', 'O-'],
-    note: 'As a B+ donor, you can give blood to B+ and AB+ recipients. You can receive blood from B+, B-, O+, and O-.'
-  },
-  'B-': {
-    canDonateTo: ['B+', 'B-', 'AB+', 'AB-'],
-    canReceiveFrom: ['B-', 'O-'],
-    note: 'B- is a rare and precious blood type. You can give blood to all B and AB groups, and receive from B- and O-.'
-  },
-  'O+': {
-    canDonateTo: ['O+', 'A+', 'B+', 'AB+'],
-    canReceiveFrom: ['O+', 'O-'],
-    note: 'O+ is the most needed blood type in India. You can donate to all positive blood groups (O+, A+, B+, AB+).'
-  },
-  'O-': {
-    canDonateTo: ['Everyone (Universal Red Cell Donor)'],
-    canReceiveFrom: ['O-'],
-    note: 'Universal Donor. Your red blood cells can save anyone in an emergency, especially when there is no time to test blood types.'
-  },
-  'AB+': {
-    canDonateTo: ['AB+'],
-    canReceiveFrom: ['Everyone (Universal Recipient)'],
-    note: 'Universal Recipient. In an emergency, you can safely receive red blood cells from any blood type.'
-  },
-  'AB-': {
-    canDonateTo: ['AB+', 'AB-'],
-    canReceiveFrom: ['AB-', 'A-', 'B-', 'O-'],
-    note: 'AB- is one of the rarest blood groups. You can donate red blood cells to AB- and AB+ recipients. You can only receive from AB-, A-, B-, and O-.'
-  },
-  'Bombay (hh)': {
-    canDonateTo: ['All ABO Blood Groups'],
-    canReceiveFrom: ['Bombay (hh) Only'],
-    note: 'Extremely rare blood type (1 in 10,000). You can donate to any ABO type, but can only safely receive blood from another Bombay (hh) donor.'
-  },
-  'Rh-null': {
-    canDonateTo: ['All Rh Incompatible Patients'],
-    canReceiveFrom: ['Rh-null Only'],
-    note: 'The world\'s rarest blood ("Golden Blood"). Lacks all Rh antigens and can save patients with rare antibody incompatibilities.'
+  'PLATELETS_SDP': {
+    'A+': {
+      canDonateTo: ['A+', 'A-', 'AB+', 'AB-'],
+      canReceiveFrom: ['A+', 'A-', 'O+', 'O-'],
+      note: 'In platelet apheresis, A platelets are safe for A and AB patients. High demand for recurring cancer chemotherapy protocols.'
+    },
+    'A-': {
+      canDonateTo: ['A+', 'A-', 'AB+', 'AB-'],
+      canReceiveFrom: ['A-', 'O-'],
+      note: 'Safe platelet donor for all A and AB recipients. Red blood cells are returned to you during the procedure.'
+    },
+    'B+': {
+      canDonateTo: ['B+', 'B-', 'AB+', 'AB-'],
+      canReceiveFrom: ['B+', 'B-', 'O+', 'O-'],
+      note: 'B platelets are compatible with B and AB patients. Vital for dengue fever thrombocytopenia and surgical reserves.'
+    },
+    'B-': {
+      canDonateTo: ['B+', 'B-', 'AB+', 'AB-'],
+      canReceiveFrom: ['B-', 'O-'],
+      note: 'Essential platelet donor for scarce B and AB emergencies across both Rh polarities.'
+    },
+    'O+': {
+      canDonateTo: ['O+', 'O-'],
+      canReceiveFrom: ['All Groups (Universal Platelet Recipient)'],
+      note: 'O plasma contains anti-A and anti-B antibodies, so O platelets are given to O patients. However, O patients can receive platelets from any group!'
+    },
+    'O-': {
+      canDonateTo: ['O-', 'O+'],
+      canReceiveFrom: ['All Groups (Universal Platelet Recipient)'],
+      note: 'O- donors can give platelets to O patients. In platelets, O patients are Universal Recipients!'
+    },
+    'AB+': {
+      canDonateTo: ['All Groups (Universal Platelet Donor)'],
+      canReceiveFrom: ['AB+'],
+      note: 'Universal Platelet & Plasma Donor! AB plasma contains zero anti-A or anti-B antibodies, making it universally safe for all trauma and dengue cases.'
+    },
+    'AB-': {
+      canDonateTo: ['All Groups (Universal Platelet Donor)'],
+      canReceiveFrom: ['AB-', 'A-', 'B-', 'O-'],
+      note: 'Universal Platelet Donor across all ABO patient categories. Vitally needed for severe burns and intensive care trauma.'
+    },
+    'Bombay (hh)': {
+      canDonateTo: ['Bombay (hh)'],
+      canReceiveFrom: ['Bombay (hh)'],
+      note: 'Due to anti-H antibodies in plasma, Bombay platelets are managed specifically for Bombay phenotype patients.'
+    },
+    'Rh-null': {
+      canDonateTo: ['Rh-null'],
+      canReceiveFrom: ['Rh-null'],
+      note: 'Rare donor platelet apheresis protocols require coordination with certified transfusion registries.'
+    }
   }
 };
 
+let currentCalculatorMode = 'WHOLE_BLOOD';
+let currentSelectedGroup = 'A+';
+
 function initBloodCalculator() {
   const chips = document.querySelectorAll('.chip-btn');
+  const modeButtons = document.querySelectorAll('.mode-toggle-btn');
   const donateList = document.getElementById('matrix-donate-list');
   const receiveList = document.getElementById('matrix-receive-list');
   const noteBox = document.getElementById('calc-note-text');
@@ -140,12 +198,13 @@ function initBloodCalculator() {
   const donateCountBadge = document.getElementById('donate-count-badge');
   const receiveCountBadge = document.getElementById('receive-count-badge');
 
-  function renderCompatibility(bg) {
-    const data = COMPATIBILITY_DATA[bg];
+  function renderCompatibility() {
+    const modeData = COMPATIBILITY_DATA[currentCalculatorMode] || COMPATIBILITY_DATA['WHOLE_BLOOD'];
+    const data = modeData[currentSelectedGroup];
     if (!data) return;
 
     if (currentSelectedLabel) {
-      currentSelectedLabel.textContent = bg;
+      currentSelectedLabel.textContent = currentSelectedGroup;
     }
 
     // Render Donate To Count & Chips
@@ -176,17 +235,28 @@ function initBloodCalculator() {
     }
   }
 
+  // Blood group chips click listener
   chips.forEach(chip => {
     chip.addEventListener('click', () => {
       chips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
-      const bg = chip.getAttribute('data-bg');
-      renderCompatibility(bg);
+      currentSelectedGroup = chip.getAttribute('data-bg');
+      renderCompatibility();
+    });
+  });
+
+  // Mode toggle buttons click listener (Whole Blood vs Platelets SDP)
+  modeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modeButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCalculatorMode = btn.getAttribute('data-mode') || 'WHOLE_BLOOD';
+      renderCompatibility();
     });
   });
 
   // Initial render
-  renderCompatibility('A+');
+  renderCompatibility();
 }
 
 /* ==========================================================================
@@ -213,8 +283,6 @@ function initSmoothScroll() {
     });
   });
 }
-
-
 
 /* ==========================================================================
    Active Navigation Link Highlighting via IntersectionObserver

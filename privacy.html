@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — BloodRadar Emergency Network</title>
-  <meta name="description" content="Official Privacy Policy and Truecaller OAuth verification details for BloodRadar — India's real-time voluntary emergency blood network.">
+  <title>Privacy Policy &amp; Data Protection — BloodRadar Emergency Network</title>
+  <meta name="description" content="Official Privacy Policy, data encryption, and DPDP Act compliance details for BloodRadar — India's real-time voluntary emergency blood and platelet network.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +30,9 @@
       <ul class="nav-links">
         <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
         <li><a href="index.html#features" class="nav-link">Features</a></li>
+        <li><a href="index.html#recovery" class="nav-link">Recovery</a></li>
         <li><a href="index.html#compatibility" class="nav-link">Compatibility</a></li>
-        <li><a href="index.html#safety" class="nav-link">NACO Guidelines</a></li>
+        <li><a href="index.html#safety" class="nav-link">Safety</a></li>
         <li><a href="terms.html" class="nav-link">Terms</a></li>
       </ul>
 
@@ -52,8 +53,9 @@
       <li><a href="index.html" class="mobile-nav-link">Home</a></li>
       <li><a href="index.html#how-it-works" class="mobile-nav-link">How It Works</a></li>
       <li><a href="index.html#features" class="mobile-nav-link">Features</a></li>
+      <li><a href="index.html#recovery" class="mobile-nav-link">Recovery Engine</a></li>
       <li><a href="index.html#compatibility" class="mobile-nav-link">Compatibility Calculator</a></li>
-      <li><a href="index.html#safety" class="mobile-nav-link">NACO Guidelines</a></li>
+      <li><a href="index.html#safety" class="mobile-nav-link">Safety Guidelines</a></li>
       <li><a href="terms.html" class="mobile-nav-link">Terms of Service</a></li>
     </ul>
     <a href="index.html" class="btn-primary" style="width: 100%;">Back to Home</a>
@@ -62,9 +64,9 @@
   <!-- Page Header -->
   <header class="legal-page-header">
     <div class="container legal-header-box">
-      <div class="last-updated-text">Last Updated: August 15, 2026</div>
+      <div class="last-updated-text">Last Updated: September 29, 2026</div>
       <h1>Privacy Policy &amp; Data Protection</h1>
-      <p style="color: #64748B; font-size: 18px;">Clear, transparent details on how we protect your privacy, encrypt your data, and verify phone numbers with Truecaller.</p>
+      <p style="color: #64748B; font-size: 18px;">Clear, transparent details on how we protect your privacy, encrypt your health profile, and safeguard donor phone numbers.</p>
     </div>
   </header>
 
@@ -74,31 +76,31 @@
       
       <p>BloodRadar ("we", "our", or "the platform") is a non-commercial, voluntary emergency blood and platelet donor communication network operating in India. We are dedicated to maintaining the highest standards of user privacy, medical confidentiality, and data protection.</p>
 
-      <p>This Privacy Policy explains how information is collected, used, processed, and safeguarded when you use the BloodRadar mobile application and website, specifically addressing our integration with the official <strong>Truecaller SDK</strong>, location services, and address book hashing.</p>
+      <p>This Privacy Policy explains how information is collected, used, processed, and safeguarded when you use the BloodRadar mobile application and website, specifically addressing our zero-trust device contact hashing, encrypted authentication, and on-demand location privacy.</p>
 
       <h2>1. Information We Collect</h2>
       <p>To facilitate rapid, life-saving emergency matching while adhering to the principle of data minimization, we collect only strictly necessary data:</p>
       
       <ul>
         <li><strong>Account Profile Data:</strong> Full Name, Blood Group (ABO and Rh type, including rare phenotypes like Bombay hh or Rh-null), Gender, and City/State.</li>
-        <li><strong>Verified Phone Number:</strong> Collected via Truecaller 1-Tap OAuth verification or SMS authentication. Used strictly for emergency donor contact and account identity.</li>
+        <li><strong>Verified Phone Number &amp; Identity:</strong> Authenticated securely via Google 1-Tap OAuth or encrypted Supabase session. Contact numbers are stored encrypted and masked, used strictly for life-saving emergency connectivity.</li>
         <li><strong>On-Demand Location (Hospital Emergency Geofence):</strong> GPS coordinates of the destination hospital when an emergency blood or platelet request is broadcast, and coarse city coordinates of donors to calculate the 10km proximity radius. <em>BloodRadar does NOT track background location when the app is closed.</em></li>
         <li><strong>Cryptographic Contact Hashes (Stage 1 Address Book Broadcast):</strong> When you initiate an emergency request, phone numbers in your address book are hashed locally (SHA-256) on your device to match against registered compatible donors in your contact list. Raw address books are never uploaded or stored in plain text.</li>
-        <li><strong>Donation History &amp; Cooldown Timers:</strong> Date of last verified whole blood or platelet (SDP) donation to enforce mandatory recovery intervals (90 days for whole blood, 48 hours to 14 days for platelets) under National AIDS Control Organisation (NACO) and DGHS guidelines.</li>
+        <li><strong>Donation History &amp; Biological Cooldown Timers:</strong> Date of last verified whole blood or platelet (SDP) donation to enforce statutory recovery intervals (90 days for Men, 120 days for Women for whole blood; 28-day reference window for SDP post-whole blood) under National Blood Transfusion Council (NBTC) and DGHS guidelines.</li>
       </ul>
 
-      <div class="legal-callout-box" id="truecaller">
-        <h4>Official Truecaller SDK Phone Verification &amp; Data Safety Declaration</h4>
-        <p>BloodRadar integrates the official Truecaller SDK to allow users to verify their mobile number with zero-OTP friction. This ensures instant account creation during time-critical medical emergencies without waiting for SMS delivery.</p>
+      <div class="legal-callout-box" id="authentication">
+        <h4>Zero-Trace Contact Hashing &amp; Encrypted Authentication Declaration</h4>
+        <p>BloodRadar utilizes client-side cryptographic SHA-256 hashing to check whether any friends or family in your address book are compatible registered donors. Your raw contact list is never uploaded, stored, or synced to our servers. Account authentication is powered by secure OAuth (Google 1-Tap) and end-to-end encrypted Supabase sessions.</p>
       </div>
 
-      <h2>2. Truecaller SDK Data Handling Compliance</h2>
-      <p>In strict compliance with Truecaller Developer Policies, Google Play Developer Requirements, and the Indian Digital Personal Data Protection (DPDP) Act 2023:</p>
+      <h2>2. Contact Security &amp; Phone Privacy Protection</h2>
+      <p>In strict compliance with Google Play Developer Policies, Apple App Store Guidelines, and the Indian Digital Personal Data Protection (DPDP) Act 2023:</p>
       <ul>
-        <li><strong>Zero Commercial Data Selling:</strong> We NEVER sell, lease, rent, trade, or monetize your Truecaller profile data, phone number, or name to third-party advertisers, data brokers, or marketing networks.</li>
-        <li><strong>Explicit User Consent:</strong> Truecaller authentication is triggered strictly upon your deliberate tap on the "Verify with Truecaller" button. No background profile extraction occurs.</li>
-        <li><strong>Encrypted Storage:</strong> Phone numbers obtained via Truecaller are stored in an encrypted database using AES-256 encryption at rest.</li>
-        <li><strong>Phone Number Masking &amp; Privacy:</strong> Your phone number is NEVER publicly displayed in search directories. It is only revealed to a verified requester after you explicitly accept an emergency blood broadcast.</li>
+        <li><strong>Zero Commercial Data Selling:</strong> We NEVER sell, lease, rent, trade, or monetize your profile data, phone number, or contacts to third-party advertisers, data brokers, or marketing networks.</li>
+        <li><strong>No Plaintext Address Book Upload:</strong> When searching your contacts in Stage 1, numbers are converted into cryptographic irreversible hashes on your device. Only hashes are matched. Raw contact lists never leave your device.</li>
+        <li><strong>Encrypted Storage:</strong> All account data and emergency records are stored in databases secured with AES-256 encryption at rest and TLS 1.3 in transit.</li>
+        <li><strong>Masked Calling &amp; Privacy:</strong> Your phone number is NEVER publicly displayed in search directories or open feeds. Direct calling is only initiated between a verified requester and an accepted donor.</li>
       </ul>
 
       <h2>3. How We Use Your Information</h2>
@@ -106,7 +108,7 @@
       <ul>
         <li>To compute compatibility matching algorithms between patient requirements and donor blood groups.</li>
         <li>To deliver high-priority push notifications (FCM) when an emergency occurs within a 10km radius of your city.</li>
-        <li>To enforce the 90-day NACO medical donation cooldown period to prevent premature blood donation.</li>
+        <li>To enforce the NBTC statutory donation cooldown periods (90 days for Men, 120 days for Women) to protect donor health and prevent premature blood collection.</li>
         <li>To display anonymized real-time radar nodes on the active radar screen.</li>
       </ul>
 
@@ -184,6 +186,15 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- Statutory Regulatory Notice -->
+      <div class="footer-statutory-notice">
+        <div class="statutory-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          STATUTORY COMPLIANCE &amp; REGULATORY NOTICE
+        </div>
+        <p>BloodRadar is a voluntary technology facilitator for emergency blood and platelet communication. BloodRadar does not collect, store, buy, sell, or transport blood, platelets, or human tissue. All blood donation, clinical screening, compatibility testing, component separation, and transfusion are conducted exclusively by licensed blood centres and hospital transfusion medicine departments in compliance with the Drugs and Cosmetics Act, 1940, Drugs and Cosmetics Rules, 1945, and National Blood Transfusion Council (NBTC) guidelines. Commercial blood banking and paid donations are strictly prohibited by law.</p>
       </div>
 
       <div class="footer-divider-line">
