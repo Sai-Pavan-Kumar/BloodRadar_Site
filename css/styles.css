@@ -2376,3 +2376,242 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ==========================================================================
+   Smart Email Provider Launcher Modal (Apple x Google Aesthetics)
+   Zero Third-Party Quotas • 100% Free • Direct Webmail & Client Dispatch
+   ========================================================================== */
+.br-email-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
+}
+
+.br-email-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.br-email-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  transform: scale(0.95) translateY(8px);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.br-email-modal-backdrop.is-open .br-email-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.br-email-modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #F1F5F9;
+  border: none;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.br-email-modal-close-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+  transform: rotate(90deg);
+}
+
+.br-email-modal-header {
+  padding-right: 36px;
+  margin-bottom: 18px;
+}
+
+.br-email-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FF3B30;
+  background: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.18);
+  padding: 3px 9px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.br-email-modal-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.02em;
+}
+
+.br-email-modal-subtitle {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.br-email-pill-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 18px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12.5px;
+  color: #1E293B;
+  font-weight: 600;
+}
+
+.br-email-pill-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748B;
+  letter-spacing: 0.05em;
+}
+
+.br-email-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.br-email-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #FAFAFC;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.br-email-option-btn:hover {
+  background: #FFFFFF;
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  transform: translateY(-1px);
+}
+
+.br-email-option-btn:active {
+  transform: translateY(0);
+}
+
+.br-email-option-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+
+.br-email-option-btn:hover .br-email-option-icon {
+  background: #0F172A;
+  color: #FFFFFF;
+  border-color: #0F172A;
+}
+
+.br-email-option-btn.copied .br-email-option-icon {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.br-email-option-text {
+  flex-grow: 1;
+}
+
+.br-email-option-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.25;
+}
+
+.br-email-option-desc {
+  display: block;
+  font-size: 12px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.br-email-option-arrow {
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.br-email-option-btn:hover .br-email-option-arrow {
+  color: #0F172A;
+  transform: translate(2px, -2px);
+}
+
+.br-email-modal-footer {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.br-email-modal-footer p {
+  font-size: 11.5px;
+  color: #94A3B8;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .br-email-modal-dialog {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+}
+
