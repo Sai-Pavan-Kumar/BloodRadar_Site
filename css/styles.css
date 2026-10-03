@@ -31,6 +31,10 @@
   --accent-emerald-glow: rgba(16, 185, 129, 0.4);
   --accent-emerald-border: rgba(16, 185, 129, 0.25);
 
+  --accent-blue: #0284C7;
+  --accent-blue-light: rgba(2, 132, 199, 0.1);
+  --accent-blue-border: rgba(2, 132, 199, 0.25);
+
   --text-dark: #1D1D1F;
   --text-dark-muted: #64748B;
   --text-dark-subtle: #94A3B8;
@@ -878,12 +882,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Enhanced 2-Tier Emergency Pipeline Architecture
+   Enhanced 2-Tier Emergency Pipeline Architecture (Clean Light Theme)
    ========================================================================== */
 .pipeline-section {
-  padding: 140px 0;
-  background: #090E1A;
-  color: var(--text-light);
+  padding: 120px 0;
+  background: var(--light-surface);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
   position: relative;
   overflow: hidden;
 }
@@ -891,12 +896,12 @@ h1, h2, h3, h4, h5, h6 {
 .pipeline-section::before {
   content: '';
   position: absolute;
-  top: -100px;
+  top: -120px;
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(var(--primary-red-rgb), 0.1) 0%, transparent 65%);
-  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--primary-red-rgb), 0.04) 0%, transparent 65%);
+  border-radius: var(--radius-full);
   pointer-events: none;
 }
 
@@ -917,9 +922,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-.section-title.light { color: #FFFFFF; }
-.section-subtitle.light { color: #94A3B8; }
-
 .pipeline-track-container {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -929,10 +931,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pipeline-step-card {
-  background: #131D2F;
+  background: var(--light-surface-subtle);
   border-radius: var(--radius-xl);
   padding: 44px 38px;
-  border: 1px solid #1E2E48;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
   position: relative;
   transition: var(--transition-smooth);
   display: flex;
@@ -940,9 +943,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pipeline-step-card:hover {
+  background: var(--light-surface);
   transform: translateY(-4px);
-  border-color: rgba(var(--primary-red-rgb), 0.4);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-md);
 }
 
 .pipeline-step-header {
@@ -954,36 +958,40 @@ h1, h2, h3, h4, h5, h6 {
 
 .step-number-badge {
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   color: var(--primary-red);
-  background: rgba(var(--primary-red-rgb), 0.12);
-  border: 1px solid rgba(var(--primary-red-rgb), 0.25);
+  background: var(--primary-red-light);
+  border: 1px solid var(--primary-red-border);
   padding: 6px 14px;
   border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
 }
 
 .step-number-badge.blue {
-  color: #38BDF8;
-  background: rgba(56, 189, 248, 0.12);
-  border-color: rgba(56, 189, 248, 0.25);
+  color: var(--accent-blue);
+  background: var(--accent-blue-light);
+  border-color: var(--accent-blue-border);
 }
 
 .pipeline-time-tag {
   font-size: 13px;
   font-weight: 700;
-  color: #94A3B8;
+  color: var(--text-dark-muted);
   letter-spacing: 0.02em;
 }
 
 .pipeline-step-card h3 {
-  font-size: 26px;
-  color: #FFFFFF;
-  margin-bottom: 14px;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--dark-slate);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
 .pipeline-step-card p {
-  color: #94A3B8;
+  color: var(--text-dark-muted);
   font-size: 15px;
   line-height: 1.65;
   margin-bottom: 28px;
@@ -995,7 +1003,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border-top: 1px solid #1E2E48;
+  border-top: 1px solid var(--border-subtle);
   padding-top: 24px;
 }
 
@@ -1004,7 +1012,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 12px;
   font-size: 14px;
-  color: #CBD5E1;
+  font-weight: 500;
+  color: var(--dark-slate);
 }
 
 .pipeline-features-list li svg {
@@ -1022,21 +1031,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pipeline-bridge-circle {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #1E2E48;
-  border: 1px solid #334768;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--light-surface-subtle);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary-red);
+  transition: all 0.25s ease;
+}
+
+.pipeline-bridge:hover .pipeline-bridge-circle {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-red-border);
 }
 
 .pipeline-bridge-text {
   font-size: 11px;
   font-weight: 700;
-  color: #64748B;
+  color: var(--text-dark-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   writing-mode: vertical-rl;
