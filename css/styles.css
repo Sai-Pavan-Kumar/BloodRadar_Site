@@ -1117,97 +1117,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   App Showcase / Device Visual Section
-   ========================================================================== */
-.showcase-section {
-  padding: 110px 0;
-  background: #FFFFFF;
-  border-top: 1px solid var(--border-light);
-}
-
-.showcase-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.showcase-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-
-.showcase-visual img {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  display: block;
-  border: none;
-  box-shadow: none;
-  background: transparent;
-  transition: transform 0.4s ease;
-}
-
-.showcase-visual:hover img {
-  transform: translateY(-4px);
-}
-
-.showcase-content h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.showcase-content p.lead-text {
-  font-size: 17px;
-  color: var(--text-dark-muted);
-  margin-bottom: 28px;
-  line-height: 1.65;
-}
-
-.showcase-points {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 36px;
-}
-
-.showcase-point-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.showcase-point-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--accent-emerald-light);
-  color: var(--accent-emerald);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.showcase-point-item h4 {
-  font-size: 16px;
-  margin-bottom: 2px;
-  color: var(--dark-slate);
-}
-
-.showcase-point-item p {
-  font-size: 14px;
-  color: var(--text-dark-muted);
-  margin: 0;
-}
 
 /* ==========================================================================
    Mission Statement & Core Pledge (Apple-Grade Manifesto)
@@ -2046,8 +1955,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 48px;
   }
 
-  .hero-grid,
-  .showcase-grid {
+  .hero-grid {
     grid-template-columns: 1fr;
     gap: 48px;
   }
