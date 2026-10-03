@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Stylesheet & Icons -->
-  <link rel="stylesheet" href="css/styles.css?v=2.4">
+  <link rel="stylesheet" href="css/styles.css?v=2.5">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="icon" type="image/webp" href="assets/images/favicon.webp">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
@@ -85,7 +85,7 @@
       
       <ul>
         <li><strong>Account Profile Data:</strong> Full Name, Blood Group (ABO and Rh type, including rare phenotypes like Bombay hh or Rh-null), Gender, and City/State.</li>
-        <li><strong>Verified Phone Number &amp; Identity:</strong> Authenticated securely via Google 1-Tap OAuth or encrypted Supabase session. Contact numbers are stored encrypted and masked, used strictly for life-saving emergency connectivity.</li>
+        <li><strong>Verified Phone Number &amp; Identity:</strong> Authenticated securely via Google 1-Tap OAuth or encrypted Supabase session. Contact numbers are stored encrypted and protected from public listing, used strictly for life-saving emergency connectivity.</li>
         <li><strong>On-Demand Location (Hospital Emergency Geofence):</strong> GPS coordinates of the destination hospital when an emergency blood or platelet request is broadcast, and coarse city coordinates of donors to calculate the 10km proximity radius. <em>BloodRadar does NOT track background location when the app is closed.</em></li>
         <li><strong>Cryptographic Contact Hashes (Stage 1 Address Book Broadcast):</strong> When you initiate an emergency request, phone numbers in your address book are hashed locally (SHA-256) on your device to match against registered compatible donors in your contact list. Raw address books are never uploaded or stored in plain text.</li>
         <li><strong>Donation History &amp; Biological Cooldown Timers:</strong> Date of last verified whole blood or platelet (SDP) donation to enforce statutory recovery intervals (90 days for Men, 120 days for Women for whole blood; 28-day reference window for SDP post-whole blood) under National Blood Transfusion Council (NBTC) and DGHS guidelines.</li>
@@ -102,7 +102,7 @@
         <li><strong>Zero Commercial Data Selling:</strong> We NEVER sell, lease, rent, trade, or monetize your profile data, phone number, or contacts to third-party advertisers, data brokers, or marketing networks.</li>
         <li><strong>No Plaintext Address Book Upload:</strong> When searching your contacts in Stage 1, numbers are converted into cryptographic irreversible hashes on your device. Only hashes are matched. Raw contact lists never leave your device.</li>
         <li><strong>Encrypted Storage:</strong> All account data and emergency records are stored in databases secured with AES-256 encryption at rest and TLS 1.3 in transit.</li>
-        <li><strong>Masked Calling &amp; Privacy:</strong> Your phone number is NEVER publicly displayed in search directories or open feeds. Direct calling is only initiated between a verified requester and an accepted donor.</li>
+        <li><strong>No Public Directories &amp; Opt-In Privacy:</strong> Your phone number is NEVER publicly displayed in search directories, web lists, or open feeds. Direct calling is only initiated between a verified requester and an accepted donor.</li>
       </ul>
 
       <h2>3. How We Use Your Information</h2>
