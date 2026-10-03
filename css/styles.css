@@ -1,7 +1,7 @@
 /* ==========================================================================
    BloodRadar Web Design System — Apple x Google Hybrid Aesthetics
    Color Tokens: Crimson #FF3B30 | Slate #0F172A | Light #FAFAFC | Emerald #10B981
-   Typography: Outfit (Headings 800) + Inter (Body)
+   Typography: Sora (Primary/Headings) + Manrope (Secondary/Body)
    100% Vanilla CSS • Zero AI-Slop • Custom Scrollbar • Pulsing Heart
    ========================================================================== */
 
@@ -37,8 +37,8 @@
   --text-light-subtle: #64748B;
 
   /* Typography Scale */
-  --font-heading: -apple-system, BlinkMacSystemFont, 'Outfit', 'Segoe UI', Roboto, sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Alpha Borders */
   --border-alpha: rgba(0, 0, 0, 0.06);
@@ -1852,7 +1852,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-header h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 700;
   color: var(--dark-slate);
@@ -2131,7 +2131,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 9px;
   border: none;
   background: transparent;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
   color: #64748B;
@@ -2190,14 +2190,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .procedure-type-header h4 {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 17px;
   font-weight: 700;
   color: var(--dark-slate);
 }
 
 .procedure-pill {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 700;
   padding: 4px 10px;
@@ -2270,14 +2270,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .milestone-title-row strong {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 13.5px;
   font-weight: 700;
   color: var(--dark-slate);
 }
 
 .milestone-day-badge {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 700;
   color: #94A3B8;
@@ -2321,7 +2321,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .qa-card h4 {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 17px;
   font-weight: 700;
   color: var(--dark-slate);
@@ -2350,7 +2350,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 700;
   color: #94A3B8;
@@ -2450,7 +2450,7 @@ h1, h2, h3, h4, h5, h6 {
 .br-email-modal-badge {
   display: inline-flex;
   align-items: center;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2464,7 +2464,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .br-email-modal-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 19px;
   font-weight: 800;
   color: #0F172A;
@@ -2495,7 +2495,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .br-email-pill-label {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 10.5px;
   font-weight: 700;
   text-transform: uppercase;
@@ -2523,7 +2523,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   text-align: left;
   width: 100%;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
 }
