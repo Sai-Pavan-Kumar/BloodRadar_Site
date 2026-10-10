@@ -1,0 +1,334 @@
+/* NACO Guidelines & Medical Safety Section */
+.safety-section {
+  padding: 110px 0;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+}
+
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.safety-card {
+  background: #FFFFFF;
+  padding: 34px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.safety-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.safety-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.16);
+  color: var(--accent-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: var(--transition-fast);
+}
+
+.safety-card:hover .safety-card-icon {
+  transform: scale(1.05);
+  background: rgba(16, 185, 129, 0.14);
+}
+
+.safety-card h4 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: var(--dark-slate);
+}
+
+.safety-card p {
+  color: var(--text-dark-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* Biological Recovery Engine Section */
+.recovery-engine-section {
+  padding: 100px 0;
+  background: #FFFFFF;
+}
+
+.recovery-preview-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  margin-top: 36px;
+}
+
+.recovery-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.procedure-type-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.procedure-type-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.procedure-type-header h4 {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark-slate);
+}
+
+.procedure-pill {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: var(--dark-slate);
+}
+
+.procedure-type-card p {
+  font-size: 13.5px;
+  color: #64748B;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.procedure-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #475569;
+}
+
+.procedure-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-milestones-box {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-light);
+}
+
+.milestones-header {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.milestones-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-slate);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.milestones-subtitle {
+  font-size: 13.5px;
+  color: var(--text-dark-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.timeline-milestones-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 6px;
+}
+
+.timeline-milestones-list::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 22px;
+  bottom: 28px;
+  width: 2px;
+  background: var(--border-light);
+  z-index: 1;
+}
+
+.milestone-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  z-index: 2;
+}
+
+.milestone-item:last-child {
+  padding-bottom: 0;
+}
+
+.milestone-dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--light-surface);
+  border: 2px solid var(--primary-red);
+  box-shadow: 0 0 0 4px var(--primary-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 12px;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.milestone-dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary-red);
+}
+
+.milestone-item.milestone-complete .milestone-dot {
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 0 4px var(--accent-emerald-light);
+}
+
+.milestone-item.milestone-complete .milestone-dot::after {
+  background: var(--accent-emerald);
+}
+
+.milestone-content {
+  flex-grow: 1;
+  background: var(--light-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  transition: all 0.2s ease;
+}
+
+.milestone-item:hover .milestone-content {
+  background: var(--light-surface);
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(3px);
+}
+
+.milestone-item.milestone-complete .milestone-content {
+  border-left: 3px solid var(--accent-emerald);
+}
+
+.milestone-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.milestone-title-row strong {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--dark-slate);
+}
+
+.milestone-day-badge {
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--dark-slate);
+  background: var(--light-surface);
+  border: 1px solid var(--border-light);
+  padding: 3px 11px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.milestone-day-badge.highlight-emerald {
+  color: var(--accent-emerald);
+  background: var(--accent-emerald-light);
+  border-color: var(--accent-emerald-border);
+}
+
+.milestone-desc {
+  font-size: 13px;
+  color: var(--text-dark-muted);
+  line-height: 1.5;
+}
+
+/* Clinical Truths & Fear Busters Section */
+.clinical-truths-section {
+  padding: 100px 0;
+  background: #F8FAFC;
+}
+
+.qa-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.qa-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.qa-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: #CBD5E1;
+}
+
+.qa-card h4 {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark-slate);
+  margin-bottom: 8px;
+}
+
+.qa-card p {
+  font-size: 13.5px;
+  color: #64748B;
+  line-height: 1.6;
+}
+

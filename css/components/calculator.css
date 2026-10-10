@@ -1,0 +1,237 @@
+/* Elevated Blood Compatibility Calculator */
+.calculator-section {
+  padding: 110px 0;
+  background: var(--light-bg);
+  border-top: 1px solid var(--border-light);
+}
+
+.calc-card {
+  background: #FFFFFF;
+  padding: 56px 48px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.calc-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.calc-header h2 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.calc-header p {
+  color: var(--text-dark-muted);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blood-selector-wrapper {
+  margin-bottom: 36px;
+}
+
+.blood-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.chip-btn {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--dark-slate);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip-btn:hover {
+  background: #F8FAFC;
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(var(--primary-red-rgb), 0.12);
+}
+
+.chip-btn.active {
+  background: var(--primary-red);
+  color: #FFFFFF !important;
+  border-color: var(--primary-red);
+  box-shadow: var(--shadow-crimson);
+  transform: translateY(-2px);
+}
+
+.chip-btn.rare-type {
+  font-size: 14px;
+}
+
+.compatibility-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 10px;
+}
+
+.matrix-box {
+  background: #FFFFFF;
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.matrix-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.matrix-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.matrix-header-title h4 {
+  font-size: 17px;
+  color: var(--dark-slate);
+}
+
+.matrix-count-badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.matrix-count-badge.red {
+  background: var(--primary-red-light);
+  color: var(--primary-red);
+}
+
+.matrix-count-badge.emerald {
+  background: var(--accent-emerald-light);
+  color: var(--accent-emerald);
+}
+
+.matrix-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.matrix-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--light-surface-subtle);
+  border: 1px solid var(--border-light);
+  color: var(--dark-slate);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-pill:hover {
+  transform: translateY(-2px);
+}
+
+.matrix-pill.highlight-red {
+  background: var(--primary-red);
+  color: #FFFFFF !important;
+  border-color: var(--primary-red);
+  box-shadow: 0 4px 12px rgba(var(--primary-red-rgb), 0.25);
+}
+
+.matrix-pill.highlight-emerald {
+  background: var(--accent-emerald);
+  color: #FFFFFF !important;
+  border-color: var(--accent-emerald);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.calc-note-box {
+  margin-top: 32px;
+  padding: 18px 24px;
+  border-radius: var(--radius-md);
+  background: #F8FAFC;
+  border: 1px solid var(--border-light);
+  font-size: 15px;
+  color: var(--dark-slate);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  line-height: 1.5;
+}
+
+.calc-note-box svg {
+  color: var(--primary-red);
+  flex-shrink: 0;
+}
+
+
+/* Dual-Mode Compatibility Calculator Toggle */
+.calc-mode-selector-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.calc-mode-toggle {
+  display: inline-flex;
+  background: #F1F5F9;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  gap: 4px;
+}
+
+.mode-toggle-btn {
+  padding: 10px 20px;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-toggle-btn:hover {
+  color: var(--dark-slate);
+}
+
+.mode-toggle-btn.active {
+  background: #FFFFFF;
+  color: var(--dark-slate);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+

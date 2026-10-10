@@ -1,0 +1,162 @@
+/* Responsive Breakpoints & Device Optimizations */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-cta-group,
+  .hero-store-row {
+    justify-content: center;
+  }
+
+  .pipeline-track-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline-bridge {
+    flex-direction: row;
+    padding: 12px 0;
+  }
+
+  .pipeline-bridge-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .features-grid,
+  .safety-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .blood-selector-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .nav-links,
+  .nav-cta-group .btn-primary {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero-section {
+    padding: 120px 0 70px 0;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-live-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .features-grid,
+  .safety-grid,
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-note-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-card {
+    padding: 44px 24px;
+  }
+
+  .mission-title {
+    font-size: 32px;
+  }
+
+  .mission-points {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-nav-inline {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-nav-inline li::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .blood-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-live-card {
+    padding: 16px;
+  }
+
+  .request-summary-box {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .req-blood-badge {
+    width: 46px;
+    height: 46px;
+  }
+
+  .req-blood-badge .blood-type {
+    font-size: 18px;
+  }
+}
+

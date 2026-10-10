@@ -1,0 +1,27 @@
+/* Utility Classes */
+.mobile-drawer-btn {
+  width: 100%;
+}
+
+.legal-header-desc {
+  color: var(--text-dark-muted);
+  font-size: 18px;
+}
+
+.legal-link {
+  color: var(--dark-slate);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.legal-footnote {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.share-callout-text {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
