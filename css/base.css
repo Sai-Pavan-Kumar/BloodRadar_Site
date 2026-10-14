@@ -40,7 +40,7 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   letter-spacing: -0.04em;
   line-height: 1.12;
   color: var(--text-dark);

@@ -69,7 +69,7 @@
 .metric-number {
   font-family: var(--font-heading);
   font-size: 22px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   color: var(--dark-slate);
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -183,7 +183,7 @@
 .step-number-badge {
   font-family: var(--font-heading);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   color: var(--primary-red);
   background: var(--primary-red-light);
   border: 1px solid var(--primary-red-border);
@@ -208,7 +208,7 @@
 .pipeline-step-card h3 {
   font-family: var(--font-heading);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   color: var(--dark-slate);
   margin-bottom: 12px;
   letter-spacing: -0.02em;
@@ -375,7 +375,7 @@
   display: inline-block;
   font-family: var(--font-heading);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--primary-red);
@@ -575,14 +575,14 @@
 
 .x-mark {
   color: var(--primary-red);
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   font-size: 16px;
   margin-top: 2px;
 }
 
 .check-mark {
   color: var(--accent-emerald);
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   font-size: 16px;
   margin-top: 2px;
 }

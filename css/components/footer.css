@@ -25,7 +25,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   font-size: 24px;
   color: #FFFFFF;
   letter-spacing: -0.03em;
@@ -74,7 +74,7 @@
 .footer-social-block h4 {
   font-family: var(--font-heading);
   font-size: 16px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   color: #FFFFFF;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
@@ -176,7 +176,7 @@
   background: #0284C7;
   color: #FFFFFF;
   font-size: 10px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   display: inline-flex;
   align-items: center;
   justify-content: center;

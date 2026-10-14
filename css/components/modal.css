@@ -85,7 +85,7 @@
 .br-email-modal-title {
   font-family: var(--font-heading);
   font-size: 19px;
-  font-weight: 800;
+  font-weight: var(--font-weight-heading);
   color: #0F172A;
   margin: 0 0 4px 0;
   letter-spacing: -0.02em;
