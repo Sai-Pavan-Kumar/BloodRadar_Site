@@ -34,8 +34,8 @@
   --text-light-muted: #94A3B8;
   --text-light-subtle: #64748B;
 
-  --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Overused Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body: 'Overused Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 
   --border-alpha: rgba(0, 0, 0, 0.06);
   --border-alpha-strong: rgba(0, 0, 0, 0.12);

@@ -1,0 +1,18 @@
+/* SurfBoard brand font, self-hosted so no third-party host sees our visitors and CSP only needs font-src 'self'. */
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('../assets/fonts/OverusedGrotesk-VF.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* The italics are unfinished upstream, so never let the browser fake one; emphasis is weight instead. */
+html {
+  font-synthesis: none;
+}
+
+em {
+  font-style: normal;
+  font-weight: 600;
+}
